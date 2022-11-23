@@ -1,28 +1,34 @@
 import React from 'react';
+import { scopeThreeData } from '../data';
 
-const ScopeThree = ({ formData, setFormData }) => {
+const ScopeThree = ({ scopeThreeState, setScopeThreeState }) => {
+
     return (
         <div className="card">
-            <div className="step-title">Scope 3</div>
-            <p>Emisiones por Transporte</p>
-            <input
-                type="text"
-                placeholder="Address"
-                value={formData.address}
-                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-            />
-            <input
-                type="text"
-                placeholder="Nationality"
-                value={formData.nationality}
-                onChange={(e) => setFormData({ ...formData, nationality: e.target.value })}
-            />
-            <input
-                type="text"
-                placeholder="Zipcode"
-                value={formData.zipcode}
-                onChange={(e) => setFormData({ ...formData, zipcode: e.target.value })}
-            />
+            <div className="step-title">Alcance 3</div>
+            <div className="cardContainer" style={{ display: "flex" }}>
+                <div className="cardLeft" style={{ flex: 2, lineHeight: "1.5rem", margin: "1rem 1.5rem 1rem 0" }}>
+                    <b>Otras Emisiones indirectas de GEI</b>
+                    <p>Emisiones que ocurren debido a las actividades de la organización, pero que se generan a partir de fuentes que no son de su propiedad ni control, por ejemplo, viajes aéreos.</p>
+                </div>
+                <div className="cardCenter">
+                    <div className="line" />
+                </div>
+                <div className="cardRight" style={{ flex: 3, margin: "1rem 0 1rem 1.5rem" }}>
+                    {scopeThreeData.map((item) => (
+                        <div className="inputsContainer" key={item.id}>
+                            <label>{item.label}</label>
+                            <input
+                                {...item}
+                                type={item.type}
+                                placeholder={item.placeholder}
+                                value={scopeThreeState[item.name]}
+                                onChange={(e) => setScopeThreeState({ ...scopeThreeState, [e.target.name]: e.target.value })}
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }

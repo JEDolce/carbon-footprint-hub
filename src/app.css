@@ -67,7 +67,7 @@ img {
 }
 
 .card {
-    min-width: 30rem;
+    min-width: 40rem;
     background-color: white;
     border: 1px solid #333;
     border-radius: 0.5rem;
@@ -76,30 +76,9 @@ img {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0.5rem;
-    gap: 0.25em;
-}
-
-.form-group:last-child {
-    margin: 0;
-}
-
-.form-group>label {
-    font-weight: bold;
-    font-size: 0.8em;
-    color: #333;
-}
-
-.form-group>input {
-    border: 1px solid #333;
-    border-radius: 0.25em;
-    font-size: 1rem;
-    padding: 0.25em;
+    box-shadow: -1px 4px 39px -19px rgba(0, 0, 0, 0.67);
+    -webkit-box-shadow: -1px 4px 39px -19px rgba(0, 0, 0, 0.67);
+    -moz-box-shadow: -1px 4px 39px -19px rgba(0, 0, 0, 0.67);
 }
 
 .step-title {
@@ -107,12 +86,53 @@ img {
     margin-bottom: 1rem;
     font-size: 2rem;
     text-align: center;
+    font-weight: bold;
+}
+
+.cardLeft,
+.cardRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.line {
+    width: 1.5px;
+    height: 70%;
+    background-color: #26658c;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.inputsContainer {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 input {
-    border: 2px solid rgb(98, 0, 255);
-    border-radius: 5px;
+    width: 60%;
     height: 35px;
+    border: 1px solid #26658c;
+    border-radius: 5px;
     display: block;
     margin-bottom: 1rem;
 }
@@ -179,11 +199,7 @@ button {
     color: #eee;
 }
 
-#date {
-    font-size: 0.75rem;
-}
-
-.progress-bar {
+/* .progress-bar {
     width: 400px;
     height: 15px;
     background-color: white;
@@ -194,4 +210,31 @@ button {
     width: 25%;
     height: 100%;
     background-color: rgb(98, 0, 255);
+} 
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    gap: 0.25em;
 }
+
+.form-group:last-child {
+    margin: 0;
+}
+
+.form-group>label {
+    font-weight: bold;
+    font-size: 0.8em;
+    color: #333;
+}
+
+.form-group>input {
+    border: 1px solid #333;
+    border-radius: 0.25em;
+    font-size: 1rem;
+    padding: 0.25em;
+}
+
+
+*/

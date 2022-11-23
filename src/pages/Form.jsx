@@ -6,31 +6,36 @@ import Buttons from '../components/Buttons';
 
 export const Form = () => {
     const [page, setPage] = useState(0);
+    const [scopeOneState, setScopeOneState] = useState({
+        gas: "",
+        gasoil: "",
+        nafta: "",
+        fueloil: "",
+        lpg: ""
+    });
 
-    const [formData, setFormData] = useState({
-        fullname: "",
-        username: "",
-        password: "",
-        nickname: "",
-        email: "",
-        address: "",
-        nationality: "",
-        zipcode: "",
-        highestQualification: "",
-        occupation: "",
-        about: "",
+    const [scopeTwoState, setScopeTwoState] = useState({
+        electricidad: "",
+        vapor: ""
+    });
+
+    const [scopeThreeState, setScopeThreeState] = useState({
+        transporte: "",
+        transporte1: "",
+        transporte2: ""
     });
 
     const compList = [
-        <ScopeOne formData={formData} setFormData={setFormData} />,
-        <ScopeTwo formData={formData} setFormData={setFormData} />,
-        <ScopeThree formData={formData} setFormData={setFormData} />
+        <ScopeOne scopeOneState={scopeOneState} setScopeOneState={setScopeOneState} />,
+        <ScopeTwo scopeTwoState={scopeTwoState} setScopeTwoState={setScopeTwoState} />,
+        <ScopeThree scopeThreeState={scopeThreeState} setScopeThreeState={setScopeThreeState} />
     ];
 
     return (
         <div className='App'>
             <div className='container'>
                 {<div>{compList[page]}</div>}
+
                 <Buttons props={{ page, setPage, compList }} />
             </div>
         </div>

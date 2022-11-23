@@ -17,7 +17,7 @@ export const scopeOneData = [
         id: 3,
         name: "nafta",
         type: "text",
-        placeholder: "Consumo de Gas Nafta en L",
+        placeholder: "Consumo de Nafta en L",
         label: "Nafta",
     },
     {
@@ -34,28 +34,45 @@ export const scopeOneData = [
         placeholder: "Consumo de LPG en kg",
         label: "LPG",
     },
-]
+];
 
-
-
-export const inputsA = [
+export const scopeTwoData = [
     {
-        id: 1,
-        name: "name",
+        id: 6,
+        name: "electricidad",
         type: "text",
-        placeholder: "Ingrese su nombre y apellido",
-        label: "Nombre y Apellido",
-        errorMsg: "Ingrese su nombre y apellido",
-        required: true
+        placeholder: "Consumo Electrico en kWh",
+        label: "Electricidad",
     },
     {
-        id: 2,
-        name: "legajo",
+        id: 7,
+        name: "vapor",
         type: "text",
-        placeholder: "Ingrese su N° de legajo",
-        label: "N° de Legajo",
-        errorMsg: "Ingrese su n° de legajo",
-        required: true
+        placeholder: "Consumo de Vapor en m3",
+        label: "Vapor",
     }
 ];
 
+export const scopeThreeData = [
+    {
+        id: 8,
+        name: "transporte",
+        type: "text",
+        placeholder: "Consumo Electrico en kWh",
+        label: "Electricidad",
+    },
+    {
+        id: 9,
+        name: "transporte1",
+        type: "text",
+        placeholder: "Consumo Electrico en 1",
+        label: "Electricidad1",
+    },
+    {
+        id: 10,
+        name: "transporte2",
+        type: "text",
+        placeholder: "Consumo Electrico en 2",
+        label: "Electricidad2",
+    },
+];
