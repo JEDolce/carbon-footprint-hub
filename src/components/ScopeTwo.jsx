@@ -4,7 +4,7 @@ import { scopeTwoData } from '../data';
 const ScopeTwo = ({ scopeTwoState, setScopeTwoState }) => {
 
     return (
-        <div className="card">
+        <div className="card" style={{ minWidth: "40rem" }}>
             <div className="step-title">Alcance 2</div>
             <div className="cardContainer" style={{ display: "flex" }}>
                 <div className="cardLeft" style={{ flex: 2, lineHeight: "1.5rem", margin: "1rem 1.5rem 1rem 0" }}>

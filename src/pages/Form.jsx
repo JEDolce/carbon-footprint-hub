@@ -20,9 +20,17 @@ export const Form = () => {
     });
 
     const [scopeThreeState, setScopeThreeState] = useState({
-        transporte: "",
-        transporte1: "",
-        transporte2: ""
+        home: "",
+        traslados: "",
+        publico: "",
+        cabotaje: "",
+        internacional: "",
+        alojamiento: "",
+        terrestre: "",
+        maritimo: "",
+        agua: "",
+        tratamiento: "",
+        residuos: "",
     });
 
     const compList = [

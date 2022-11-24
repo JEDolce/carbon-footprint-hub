@@ -67,7 +67,7 @@ img {
 }
 
 .card {
-    min-width: 40rem;
+    min-width: 60rem;
     background-color: white;
     border: 1px solid #333;
     border-radius: 0.5rem;
@@ -102,6 +102,7 @@ img {
     align-items: center;
     justify-content: center;
     position: relative;
+    margin: 0 1rem 0 1rem;
 }
 
 .line {
