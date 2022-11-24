@@ -10,12 +10,20 @@ const ScopeOne = ({ scopeOneState, setScopeOneState }) => {
                 <div className="cardLeft" style={{ flex: 2, lineHeight: "1.5rem", margin: "1rem 1.5rem 1rem 0" }}>
                     <b>Emisiones directas de GEI</b>
                     <p>Emisiones provenientes de fuentes que son propiedad o están controladas por la empresa, es decir, dentro de los límites de la organización. Por ejemplo, las emisiones generadas por la quema de combustibles en vehículos propiedad de la organización.</p>
+                    <p>Incluye:</p>
+                    <ul>
+                        <li>Combustibles</li>
+                        <li>Refrigerantes</li>
+                        <li>Actividades Agrícolas</li>
+                    </ul>
                 </div>
                 <div className="cardCenter">
                     <div className="line" />
                 </div>
                 <div className="cardRight" style={{ flex: 3, margin: "1rem 0 1rem 1.5rem" }}>
+                    <h3>Combustibles</h3>
                     {scopeOneData.map((item) => (
+                        item.id > 0 && item.id < 6 &&
                         <div className="inputsContainer" key={item.id}>
                             <label>{item.label}</label>
                             <input
@@ -32,7 +40,9 @@ const ScopeOne = ({ scopeOneState, setScopeOneState }) => {
                     <div className="line" />
                 </div>
                 <div className="cardRight" style={{ flex: 3, margin: "1rem 0 1rem 1.5rem" }}>
+                    <h3>Refrigerantes</h3>
                     {scopeOneData.map((item) => (
+                        item.id > 5 &&
                         <div className="inputsContainer" key={item.id}>
                             <label>{item.label}</label>
                             <input

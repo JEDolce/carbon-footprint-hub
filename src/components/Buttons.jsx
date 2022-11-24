@@ -1,15 +1,7 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 export default function Buttons({ props }) {
-    const { page, setPage, compList } = props;
-
-    const navigate = useNavigate();
-
-    const handleClick = () => {
-        alert("You've successfully submitted this form");
-        navigate("/results")
-    };
+    const { page, setPage, compList, handleClick } = props;
 
     return (
         <div className='button-area'>
