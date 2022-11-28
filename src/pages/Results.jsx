@@ -1,8 +1,15 @@
 import React from 'react';
 import PieChart from '../components/PieChart';
 import BarChart from '../components/BarChart';
+import { useLocation } from 'react-router-dom';
 
 export const Results = () => {
+    const location = useLocation();
+
+    console.log(location.state);
+    console.log(location.state.scopeState.gas);
+    const data = location.state.scopeState.gas * 2;
+
     return (
         <div style={{ display: "flex" }}>
             <div className='left'>
@@ -20,7 +27,7 @@ export const Results = () => {
 
                 </div>
                 <div className='down'>
-
+                    <p>{data}</p>
                 </div>
             </div>
         </div>

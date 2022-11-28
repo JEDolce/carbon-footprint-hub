@@ -1,7 +1,7 @@
 import React from 'react';
-import { scopeTwoData } from '../data';
+import { scopeData } from '../data';
 
-const ScopeTwo = ({ scopeTwoState, setScopeTwoState }) => {
+const ScopeTwo = ({ scopeState, setScopeState }) => {
 
     return (
         <div className="card" style={{ minWidth: "40rem" }}>
@@ -15,15 +15,16 @@ const ScopeTwo = ({ scopeTwoState, setScopeTwoState }) => {
                     <div className="line" />
                 </div>
                 <div className="cardRight" style={{ flex: 3, margin: "1rem 0 1rem 1.5rem" }}>
-                    {scopeTwoData.map((item) => (
+                    {scopeData.map((item) => (
+                        item.id > 10 && item.id < 13 &&
                         <div className="inputsContainer" key={item.id}>
                             <label>{item.label}</label>
                             <input
                                 {...item}
                                 type={item.type}
                                 placeholder={item.placeholder}
-                                value={scopeTwoState[item.name]}
-                                onChange={(e) => setScopeTwoState({ ...scopeTwoState, [e.target.name]: e.target.value })}
+                                value={scopeState[item.name]}
+                                onChange={(e) => setScopeState({ ...scopeState, [e.target.name]: e.target.value })}
                             />
                         </div>
                     ))}

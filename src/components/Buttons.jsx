@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Buttons({ props }) {
-    const { page, setPage, compList, handleClick } = props;
+    const { page, setPage, compList, scopeState } = props;
 
     return (
         <div className='button-area'>
@@ -15,7 +16,11 @@ export default function Buttons({ props }) {
             }
             {
                 page === compList.length - 1 &&
-                <button onClick={handleClick}>Submit</button>
+                <div className='link'>
+                    <Link to="/results" state={{ scopeState }} style={{ textDecoration: "none", color: "white" }}>
+                        Calcular Huella
+                    </Link>
+                </div>
             }
         </div>
     )

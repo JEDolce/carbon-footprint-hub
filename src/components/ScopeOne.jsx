@@ -1,7 +1,7 @@
 import React from 'react';
-import { scopeOneData } from '../data';
+import { scopeData } from '../data';
 
-const ScopeOne = ({ scopeOneState, setScopeOneState }) => {
+const ScopeOne = ({ scopeState, setScopeState }) => {
 
     return (
         <div className="card">
@@ -22,7 +22,7 @@ const ScopeOne = ({ scopeOneState, setScopeOneState }) => {
                 </div>
                 <div className="cardRight" style={{ flex: 3, margin: "1rem 0 1rem 1.5rem" }}>
                     <h3>Combustibles</h3>
-                    {scopeOneData.map((item) => (
+                    {scopeData.map((item) => (
                         item.id > 0 && item.id < 6 &&
                         <div className="inputsContainer" key={item.id}>
                             <label>{item.label}</label>
@@ -30,8 +30,8 @@ const ScopeOne = ({ scopeOneState, setScopeOneState }) => {
                                 {...item}
                                 type={item.type}
                                 placeholder={item.placeholder}
-                                value={scopeOneState[item.name]}
-                                onChange={(e) => setScopeOneState({ ...scopeOneState, [e.target.name]: e.target.value })}
+                                value={scopeState[item.name]}
+                                onChange={(e) => setScopeState({ ...scopeState, [e.target.name]: e.target.value })}
                             />
                         </div>
                     ))}
@@ -41,16 +41,16 @@ const ScopeOne = ({ scopeOneState, setScopeOneState }) => {
                 </div>
                 <div className="cardRight" style={{ flex: 3, margin: "1rem 0 1rem 1.5rem" }}>
                     <h3>Refrigerantes</h3>
-                    {scopeOneData.map((item) => (
-                        item.id > 5 &&
+                    {scopeData.map((item) => (
+                        item.id > 5 && item.id < 11 &&
                         <div className="inputsContainer" key={item.id}>
                             <label>{item.label}</label>
                             <input
                                 {...item}
                                 type={item.type}
                                 placeholder={item.placeholder}
-                                value={scopeOneState[item.name]}
-                                onChange={(e) => setScopeOneState({ ...scopeOneState, [e.target.name]: e.target.value })}
+                                value={scopeState[item.name]}
+                                onChange={(e) => setScopeState({ ...scopeState, [e.target.name]: e.target.value })}
                             />
                         </div>
                     ))}

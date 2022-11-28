@@ -1,4 +1,4 @@
-export const scopeOneData = [
+export const scopeData = [
     {
         id: 1,
         name: "gas",
@@ -69,9 +69,6 @@ export const scopeOneData = [
         placeholder: "Refill R141b en Kg",
         label: "R141b ",
     },
-];
-
-export const scopeTwoData = [
     {
         id: 11,
         name: "electricidad",
@@ -85,10 +82,7 @@ export const scopeTwoData = [
         type: "text",
         placeholder: "Consumo de Vapor en m3",
         label: "Vapor",
-    }
-];
-
-export const scopeThreeData = [
+    },
     {
         id: 13,
         name: "home",
@@ -166,4 +160,175 @@ export const scopeThreeData = [
         placeholder: "kg de Residuos",
         label: "Residuos",
     },
-];
+]
+
+
+// export const scopeOneData = [
+//     {
+//         id: 1,
+//         name: "gas",
+//         type: "text",
+//         placeholder: "Consumo de Gas Natural en m3",
+//         label: "Gas Natural",
+//     },
+//     {
+//         id: 2,
+//         name: "gasoil",
+//         type: "text",
+//         placeholder: "Consumo de Gasoil en L",
+//         label: "Gasoil",
+//     },
+//     {
+//         id: 3,
+//         name: "nafta",
+//         type: "text",
+//         placeholder: "Consumo de Nafta en L",
+//         label: "Nafta",
+//     },
+//     {
+//         id: 4,
+//         name: "fueloil",
+//         type: "text",
+//         placeholder: "Consumo de Fueloil en L",
+//         label: "Fueloil",
+//     },
+//     {
+//         id: 5,
+//         name: "lpg",
+//         type: "text",
+//         placeholder: "Consumo de LPG en kg",
+//         label: "LPG",
+//     },
+//     {
+//         id: 6,
+//         name: "r22",
+//         type: "text",
+//         placeholder: "Refill R22 en Kg",
+//         label: "R22",
+//     },
+//     {
+//         id: 7,
+//         name: "r134",
+//         type: "text",
+//         placeholder: "Refill R134 en Kg",
+//         label: "R134",
+//     },
+//     {
+//         id: 8,
+//         name: "r407c",
+//         type: "text",
+//         placeholder: "Refill R407c en Kg",
+//         label: "R407c",
+//     },
+//     {
+//         id: 9,
+//         name: "r410a",
+//         type: "text",
+//         placeholder: "Refill R410a en Kg",
+//         label: "R410a",
+//     },
+//     {
+//         id: 10,
+//         name: "r141b",
+//         type: "text",
+//         placeholder: "Refill R141b en Kg",
+//         label: "R141b ",
+//     },
+// ];
+
+// export const scopeTwoData = [
+//     {
+//         id: 11,
+//         name: "electricidad",
+//         type: "text",
+//         placeholder: "Consumo Electrico en kWh",
+//         label: "Electricidad",
+//     },
+//     {
+//         id: 12,
+//         name: "vapor",
+//         type: "text",
+//         placeholder: "Consumo de Vapor en m3",
+//         label: "Vapor",
+//     }
+// ];
+
+// export const scopeThreeData = [
+//     {
+//         id: 13,
+//         name: "home",
+//         type: "text",
+//         placeholder: "Horas de Home Office",
+//         label: "Home Office",
+//     },
+//     {
+//         id: 14,
+//         name: "traslados",
+//         type: "text",
+//         placeholder: "Consumo de Nafta por Transporte Privado",
+//         label: "Transporte Privado",
+//     },
+//     {
+//         id: 15,
+//         name: "publico",
+//         type: "text",
+//         placeholder: "km Recorridos en Transporte Publico",
+//         label: "Transporte Publico",
+//     },
+//     {
+//         id: 16,
+//         name: "cabotaje",
+//         type: "text",
+//         placeholder: "km Recorridos en Vuelos de Cabojate",
+//         label: "Vuelos Cabojate",
+//     },
+//     {
+//         id: 17,
+//         name: "internacional",
+//         type: "text",
+//         placeholder: "km Recorridos en Vuelos Internacionales",
+//         label: "Vuelos Internacionales",
+//     },
+//     {
+//         id: 18,
+//         name: "alojamiento",
+//         type: "text",
+//         placeholder: "Noches de Hotel",
+//         label: "Alojamiento",
+//     },
+//     {
+//         id: 19,
+//         name: "terrestre",
+//         type: "text",
+//         placeholder: "km de Flete Terrestre",
+//         label: "Flete Terrestre",
+//     },
+//     {
+//         id: 20,
+//         name: "maritimo",
+//         type: "text",
+//         placeholder: "km de Flete Marítimo/Aereo",
+//         label: "Flete Marítimo/Aereo",
+//     },
+//     {
+//         id: 21,
+//         name: "agua",
+//         type: "text",
+//         placeholder: "m3 de Agua Consumida",
+//         label: "Agua Corriente",
+//     },
+//     {
+//         id: 22,
+//         name: "tratamiento",
+//         type: "text",
+//         placeholder: "m3 de Agua Tratada",
+//         label: "Agua Tratada",
+//     },
+//     {
+//         id: 23,
+//         name: "residuos",
+//         type: "text",
+//         placeholder: "kg de Residuos",
+//         label: "Residuos",
+//     },
+// ];
