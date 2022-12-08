@@ -3,120 +3,145 @@ import PieChart from '../components/PieChart';
 import BarChart from '../components/BarChart';
 import { useLocation } from 'react-router-dom';
 import { scopeData } from '../data';
+import { getResults, totalResult } from '../helpers';
+import { Link } from 'react-router-dom';
 
 export const Results = () => {
     const location = useLocation();
     const newState = location.state.scopeState;
 
-    // Gas
-    const gasState = newState.gas;
-    const gasEf = scopeData[0];
-    const gasConst = [gasEf.co2, gasEf.ch4, gasEf.n2o];
-    const gasResult = [];
+    const states = [
+        newState.gas,
+        newState.gasoil,
+        newState.nafta,
+        newState.fueloil,
+        newState.lpg
+    ];
 
-    gasConst.map((item) => {
-        return gasResult.push(Math.round((item * gasState) * 1000) / 1000)
+    const dataConst = [
+        [scopeData[0].co2, scopeData[0].ch4, scopeData[0].n2o],
+        [scopeData[1].co2, scopeData[1].ch4, scopeData[1].n2o],
+        [scopeData[2].co2, scopeData[2].ch4, scopeData[2].n2o],
+        [scopeData[3].co2, scopeData[3].ch4, scopeData[3].n2o],
+        [scopeData[4].co2, scopeData[4].ch4, scopeData[4].n2o],
+    ];
+
+    const fuelResults = {
+        gasResult: [],
+        gasoilResult: [],
+        naftaResult: [],
+        fueloilResult: [],
+        lpgResult: [],
+    };
+
+    const totals = {
+        totalGas: 0,
+        totalGasoil: 0,
+        totalNafta: 0,
+        totalFueloil: 0,
+        totalLpg: 0,
+    };
+
+    dataConst.forEach((i) => {
+        switch (i) {
+            case i = dataConst[0]:
+                var index = 0
+                getResults(i, fuelResults, states, index)
+                totals.totalGas = totalResult(index, fuelResults)
+                break
+
+            case i = dataConst[1]:
+                index = 1
+                getResults(i, fuelResults, states, index)
+                totals.totalGasoil = totalResult(index, fuelResults)
+                break
+
+            case i = dataConst[2]:
+                index = 2
+                getResults(i, fuelResults, states, index)
+                totals.totalNafta = totalResult(index, fuelResults)
+                break
+
+            case i = dataConst[3]:
+                index = 3
+                getResults(i, fuelResults, states, index)
+                totals.totalFueloil = totalResult(index, fuelResults)
+                break
+
+            case i = dataConst[4]:
+                index = 4
+                getResults(i, fuelResults, states, index)
+                totals.totalLpg = totalResult(index, fuelResults)
+                break
+
+            default:
+                console.log("lala");
+        }
     });
 
-    const gasTotal = gasResult.reduce((acc, val) => {
-        return acc + val
-    }, 0);
-
-    console.log(gasResult);
-    console.log(gasTotal);
-
-    // Gasoil
-    const gasoilEf = scopeData[1];
-    const gasoilConst = [gasoilEf.co2, gasoilEf.ch4, gasoilEf.n2o];
-    const gasoilState = newState.gasoil;
-    const gasoilResult = [];
-
-    gasoilConst.map((item) => {
-        return gasoilResult.push(Math.round((item * gasoilState) * 1000) / 1000)
-    });
-
-    const gasoilTotal = gasoilResult.reduce((acc, val) => {
-        return acc + val
-    }, 0);
-
-    console.log(gasoilResult);
-    console.log(gasoilTotal);
-
-    // Nafta
-    const naftaEf = scopeData[2];
-    const naftaConst = [naftaEf.co2, naftaEf.ch4, naftaEf.n2o];
-    const naftaState = newState.nafta;
-    const naftaResult = [];
-
-    naftaConst.map((item) => {
-        return naftaResult.push(Math.round((item * naftaState) * 1000) / 1000)
-    });
-
-    const naftaTotal = naftaResult.reduce((acc, val) => {
-        return acc + val
-    }, 0);
-
-    console.log(naftaResult);
-    console.log(naftaTotal);
-
-    // Fueloil
-    const fueloilEf = scopeData[3];
-    const fueloilConst = [fueloilEf.co2, fueloilEf.ch4, fueloilEf.n2o];
-    const fueloilState = newState.fueloil;
-    const fueloilResult = [];
-
-    fueloilConst.map((item) => {
-        return fueloilResult.push(Math.round((item * fueloilState) * 1000) / 1000)
-    });
-
-    const fueloilTotal = fueloilResult.reduce((acc, val) => {
-        return acc + val
-    }, 0);
-
-    console.log(fueloilResult);
-    console.log(fueloilTotal);
-
-    // LPG
-    const lpgEf = scopeData[4];
-    const lpgConst = [lpgEf.co2, lpgEf.ch4, lpgEf.n2o];
-    const lpgState = newState.lpg;
-    const lpgResult = [];
-
-    lpgConst.map((item) => {
-        return lpgResult.push(Math.round((item * lpgState) * 1000) / 1000)
-    });
-
-    const lpgTotal = lpgResult.reduce((acc, val) => {
-        return acc + val
-    }, 0);
-
-    console.log(lpgResult);
-    console.log(lpgTotal);
-
-
-    // Resultado Scope 1 
-    const scope1 = Math.round((gasTotal + gasoilTotal + naftaTotal + fueloilTotal + lpgTotal) * 100) / 100;
-    console.log(`Scope 1 = ${scope1} kg CO2e`);
-
+    console.log(totals);
 
     return (
         <div style={{ display: "flex" }}>
             <div className='left'>
-                <div style={{ padding: "1rem" }}>
-                    <h3>Resultados</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi mollitia quibusdam ducimus, a ullam eum ipsum aliquid veniam architecto placeat animi eos nemo tempore debitis quae adipisci. Numquam, magnam distinctio.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi mollitia quibusdam ducimus, a ullam eum ipsum aliquid veniam architecto placeat animi eos nemo tempore debitis quae adipisci. Numquam, magnam distinctio.</p>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi mollitia quibusdam ducimus, a ullam eum ipsum aliquid veniam architecto placeat animi eos nemo tempore debitis quae adipisci. Numquam, magnam distinctio.</p>
+                <div className='resultContainer'>
+                    <div style={{ padding: "1rem 2rem 1rem 2rem" }}>
+                        <h2>Resultados</h2>
+                        <p>Su huella de carbono es de:</p>
+                        <h2 style={{ textAlign: "center", margin: "2rem" }}>
+                            {Object.values(totals).reduce(
+                                (x, y) => { return Math.round((x + y) * 100) / 100 }, 0)
+                            } kg CO<span style={{ fontSize: "1rem" }}>2e</span>
+                        </h2>
+                        <p>Resultados por alcance:</p>
+                        <ul>
+                            <li>Alcance 1: &nbsp;
+                                {Object.values(totals).reduce(
+                                    (x, y) => { return Math.round((x + y) * 100) / 100 }, 0)
+                                } kg CO<span style={{ fontSize: "0.6rem" }}>2e</span>
+                            </li>
+                            <li>Alcance 2: &nbsp; {0}</li>
+                            <li>Alcance 3: &nbsp; {0}</li>
+                        </ul>
+                    </div>
+                    <div className='link recalcBtn'>
+                        <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+                            Calcular Nuevamente
+                        </Link>
+                    </div>
                 </div>
             </div>
+
             <div className='right'>
                 <div className='up' style={{ display: "flex" }}>
                     <PieChart style={{ flex: 1 }} />
                     <BarChart style={{ flex: 1 }} />
-
                 </div>
                 <div className='down'>
-                    <p>Scope 1 = {scope1} Kg CO2e </p>
+                    <div className='chart'>
+                        <h3>Emisiones de GEI de sus actividades:</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Componente</th>
+                                    <th>Emisiones CO<span style={{ fontSize: "0.75rem" }}>2e</span></th>
+                                    <th>Emisiones CO<span style={{ fontSize: "0.75rem" }}>2</span></th>
+                                    <th>Emisiones CH<span style={{ fontSize: "0.75rem" }}>4</span></th>
+                                    <th>Emisiones N<span style={{ fontSize: "0.75rem" }}>2</span>O</th>
+                                </tr>
+                                {scopeData.map((a) =>
+                                    a.id < 6 &&
+                                    <tr key={a.id}>
+                                        <td style={{ textAlign: "left" }}>{a.label}</td>
+                                        <td style={{ fontWeight: "bold" }}>{Object.values(totals)[a.id - 1]}</td>
+                                        <td>{Object.values(fuelResults)[a.id - 1][0]}</td>
+                                        <td>{Object.values(fuelResults)[a.id - 1][1]}</td>
+                                        <td>{Object.values(fuelResults)[a.id - 1][2]}</td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

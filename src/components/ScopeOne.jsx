@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { scopeData } from '../data';
 
 const ScopeOne = ({ scopeState, setScopeState }) => {
+    // const [focus, setFocus] = useState(false);
+
+    // const handleFocus = () => {
+    //     setFocus(true)
+    // };
 
     return (
         <div className="card">
@@ -10,7 +15,7 @@ const ScopeOne = ({ scopeState, setScopeState }) => {
                 <div className="cardLeft" style={{ flex: 2, lineHeight: "1.5rem", margin: "1rem 1.5rem 1rem 0" }}>
                     <b>Emisiones directas de GEI</b>
                     <p>Emisiones provenientes de fuentes que son propiedad o están controladas por la empresa, es decir, dentro de los límites de la organización. Por ejemplo, las emisiones generadas por la quema de combustibles en vehículos propiedad de la organización.</p>
-                    <p>Incluye:</p>
+                    <p style={{ margin: 0, alignSelf: "start" }}>Incluye:</p>
                     <ul>
                         <li>Combustibles</li>
                         <li>Refrigerantes</li>
@@ -24,16 +29,21 @@ const ScopeOne = ({ scopeState, setScopeState }) => {
                     <h3>Combustibles</h3>
                     {scopeData.map((item) => (
                         item.id > 0 && item.id < 6 &&
-                        <div className="inputsContainer" key={item.id}>
-                            <label>{item.label}</label>
-                            <input
-                                {...item}
-                                type={item.type}
-                                placeholder={item.placeholder}
-                                value={scopeState[item.name]}
-                                onChange={(e) => setScopeState({ ...scopeState, [e.target.name]: e.target.value })}
-                            />
-                        </div>
+                        <>
+                            <div className="inputsContainer" key={item.id}>
+                                <label>{item.label}</label>
+                                <input
+                                    {...item}
+                                    type={item.type}
+                                    placeholder={item.placeholder}
+                                    value={scopeState[item.name]}
+                                    onChange={(e) => setScopeState({ ...scopeState, [e.target.name]: e.target.value })}
+                                // onFocus={() => console.log(focus)}
+                                // onBlur={handleFocus}
+                                />
+                            </div>
+                            {/* <span>{focus ? "Debe contener un valor numerico o ser 0" : " "}</span> */}
+                        </>
                     ))}
                 </div>
                 <div className="cardCenter">

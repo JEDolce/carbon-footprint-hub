@@ -9,7 +9,7 @@ const ScopeTwo = ({ scopeState, setScopeState }) => {
             <div className="cardContainer" style={{ display: "flex" }}>
                 <div className="cardLeft" style={{ flex: 2, lineHeight: "1.5rem", margin: "1rem 1.5rem 1rem 0" }}>
                     <b>Emisiones indirectas de GEI</b>
-                    <p>Emisiones provenientes de la generación de energía comprada (en forma de electricidad, calor o vapor) que utiliza la organización.</p>
+                    <p>Emisiones provenientes de la generación de energía comprada, en forma de electricidad, calor o vapor; que es utiliza por la organización.</p>
                 </div>
                 <div className="cardCenter">
                     <div className="line" />
