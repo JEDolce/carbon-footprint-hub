@@ -3,38 +3,43 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 
 const data = [
     {
-        name: 'Page A',
-        uv: 4000,
+        name: 'Gas',
+        componente: 4000,
         amt: 2400,
     },
     {
-        name: 'Page B',
-        uv: 3000,
+        name: 'Electricidad',
+        componente: 3000,
         amt: 2210,
     },
     {
-        name: 'Page C',
-        uv: 2000,
+        name: 'Nafta',
+        componente: 2000,
         amt: 2290,
     },
     {
-        name: 'Page D',
-        uv: 2780,
+        name: 'Gasoil',
+        componente: 2780,
         amt: 2000,
     },
     {
-        name: 'Page E',
-        uv: 1890,
+        name: 'R22',
+        componente: 1890,
         amt: 2181,
     },
     {
-        name: 'Page F',
-        uv: 2390,
+        name: 'Home Office',
+        componente: 2390,
         amt: 2500,
     },
     {
-        name: 'Page G',
-        uv: 3490,
+        name: 'Fletes',
+        componente: 3490,
+        amt: 2100,
+    },
+    {
+        name: 'Vehiculos',
+        componente: 3490,
         amt: 2100,
     },
 ];
@@ -47,11 +52,11 @@ export default class Example extends PureComponent {
             <ResponsiveContainer width="100%" height="100%" >
                 <div className="chart">
                     <BarChart
-                        width={500}
+                        width={800}
                         height={300}
                         data={data}
                         margin={{
-                            top: 5,
+                            top: 10,
                             right: 30,
                             left: 20,
                             bottom: 5,
@@ -62,7 +67,7 @@ export default class Example extends PureComponent {
                         <YAxis />
                         <Tooltip />
                         <Legend />
-                        <Bar dataKey="uv" fill="#82ca9d" />
+                        <Bar dataKey="componente" fill="#26658c" />
                     </BarChart>
                 </div>
             </ResponsiveContainer>

@@ -56,6 +56,8 @@ export const scopeData = [
         placeholder: "Refill R22 en Kg",
         label: "R22",
         co2: 1810,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 7,
@@ -63,7 +65,9 @@ export const scopeData = [
         type: "text",
         placeholder: "Refill R134 en Kg",
         label: "R134",
-        co2: 1100
+        co2: 1100,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 8,
@@ -71,7 +75,9 @@ export const scopeData = [
         type: "text",
         placeholder: "Refill R407c en Kg",
         label: "R407c",
-        co2: 1774
+        co2: 1774,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 9,
@@ -79,7 +85,9 @@ export const scopeData = [
         type: "text",
         placeholder: "Refill R410a en Kg",
         label: "R410a",
-        co2: 2088
+        co2: 2088,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 10,
@@ -87,7 +95,9 @@ export const scopeData = [
         type: "text",
         placeholder: "Refill R141b en Kg",
         label: "R141b ",
-        co2: 725
+        co2: 725,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 11,
@@ -116,6 +126,8 @@ export const scopeData = [
         placeholder: "Horas de Home Office",
         label: "Home Office",
         co2: 0.34075,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 14,
@@ -123,6 +135,9 @@ export const scopeData = [
         type: "text",
         placeholder: "Consumo de Nafta por Transporte Privado",
         label: "Transporte Privado",
+        co2: 1,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 15,
@@ -130,6 +145,9 @@ export const scopeData = [
         type: "text",
         placeholder: "km Recorridos en Transporte Publico",
         label: "Transporte Publico",
+        co2: 1,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 16,
@@ -137,6 +155,9 @@ export const scopeData = [
         type: "text",
         placeholder: "km Recorridos en Vuelos de Cabojate",
         label: "Vuelos Cabojate",
+        co2: 1,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 17,
@@ -144,6 +165,9 @@ export const scopeData = [
         type: "text",
         placeholder: "km Recorridos en Vuelos Internacionales",
         label: "Vuelos Internacionales",
+        co2: 1,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 18,
@@ -151,6 +175,9 @@ export const scopeData = [
         type: "text",
         placeholder: "Noches de Hotel",
         label: "Alojamiento",
+        co2: 1,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 19,
@@ -158,6 +185,9 @@ export const scopeData = [
         type: "text",
         placeholder: "km de Flete Terrestre",
         label: "Flete Terrestre",
+        co2: 1,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 20,
@@ -165,6 +195,9 @@ export const scopeData = [
         type: "text",
         placeholder: "km de Flete Marítimo/Aereo",
         label: "Flete Marítimo/Aereo",
+        co2: 1,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 21,
@@ -172,6 +205,9 @@ export const scopeData = [
         type: "text",
         placeholder: "m3 de Agua Consumida",
         label: "Agua Corriente",
+        co2: 1,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 22,
@@ -179,6 +215,9 @@ export const scopeData = [
         type: "text",
         placeholder: "m3 de Agua Tratada",
         label: "Agua Tratada",
+        co2: 1,
+        ch4: 0,
+        n2o: 0
     },
     {
         id: 23,
@@ -186,16 +225,8 @@ export const scopeData = [
         type: "text",
         placeholder: "kg de Residuos",
         label: "Residuos",
+        co2: 1,
+        ch4: 0,
+        n2o: 0
     },
 ]
-
-export const constantes = [
-    {
-
-    },
-    {
-
-    }
-]
-
-export const gasEnergy = 12;

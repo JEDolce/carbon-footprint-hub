@@ -8,6 +8,9 @@ const ScopeOne = ({ scopeState, setScopeState }) => {
     //     setFocus(true)
     // };
 
+    // validation
+    // https://bobbyhadz.com/blog/react-check-if-input-value-is-valid-number
+
     return (
         <div className="card">
             <div className="step-title">Alcance 1</div>
@@ -38,11 +41,14 @@ const ScopeOne = ({ scopeState, setScopeState }) => {
                                     placeholder={item.placeholder}
                                     value={scopeState[item.name]}
                                     onChange={(e) => setScopeState({ ...scopeState, [e.target.name]: e.target.value })}
-                                // onFocus={() => console.log(focus)}
                                 // onBlur={handleFocus}
+                                // onFocus={() =>
+                                //     scopeData.name === "gas" && setFocus(true)
+                                // }
+                                // focus={focus.toString()}
                                 />
                             </div>
-                            {/* <span>{focus ? "Debe contener un valor numerico o ser 0" : " "}</span> */}
+                            {/* <span className='validate'>{focus ? "Debe contener un valor numérico" : " "}</span> */}
                         </>
                     ))}
                 </div>
