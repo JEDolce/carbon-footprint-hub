@@ -1,6 +1,5 @@
 {
   "name": "carbon-footprint",
-  "homepage": "http://jedolce.github.io/carbon-footprint-hub",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

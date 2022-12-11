@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/carbon-footprint-hub/static/css/main.7d37a39e.chunk.css",
-    "main.js": "/carbon-footprint-hub/static/js/main.51288170.chunk.js",
-    "main.js.map": "/carbon-footprint-hub/static/js/main.51288170.chunk.js.map",
-    "runtime-main.js": "/carbon-footprint-hub/static/js/runtime-main.eae9da5f.js",
-    "runtime-main.js.map": "/carbon-footprint-hub/static/js/runtime-main.eae9da5f.js.map",
-    "static/js/2.a2a6216f.chunk.js": "/carbon-footprint-hub/static/js/2.a2a6216f.chunk.js",
-    "static/js/2.a2a6216f.chunk.js.map": "/carbon-footprint-hub/static/js/2.a2a6216f.chunk.js.map",
-    "index.html": "/carbon-footprint-hub/index.html",
-    "static/css/main.7d37a39e.chunk.css.map": "/carbon-footprint-hub/static/css/main.7d37a39e.chunk.css.map",
-    "static/js/2.a2a6216f.chunk.js.LICENSE.txt": "/carbon-footprint-hub/static/js/2.a2a6216f.chunk.js.LICENSE.txt",
-    "static/media/app.css": "/carbon-footprint-hub/static/media/fondo-tuberias.6aa3cfc3.png"
+    "main.css": "/static/css/main.062fe3ff.chunk.css",
+    "main.js": "/static/js/main.51288170.chunk.js",
+    "main.js.map": "/static/js/main.51288170.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.67c42775.js",
+    "runtime-main.js.map": "/static/js/runtime-main.67c42775.js.map",
+    "static/js/2.a2a6216f.chunk.js": "/static/js/2.a2a6216f.chunk.js",
+    "static/js/2.a2a6216f.chunk.js.map": "/static/js/2.a2a6216f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.062fe3ff.chunk.css.map": "/static/css/main.062fe3ff.chunk.css.map",
+    "static/js/2.a2a6216f.chunk.js.LICENSE.txt": "/static/js/2.a2a6216f.chunk.js.LICENSE.txt",
+    "static/media/app.css": "/static/media/fondo-tuberias.6aa3cfc3.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.eae9da5f.js",
+    "static/js/runtime-main.67c42775.js",
     "static/js/2.a2a6216f.chunk.js",
-    "static/css/main.7d37a39e.chunk.css",
+    "static/css/main.062fe3ff.chunk.css",
     "static/js/main.51288170.chunk.js"
   ]
 }
