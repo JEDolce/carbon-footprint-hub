@@ -7,7 +7,7 @@ export const Intro = () => {
     return (
         <div className='App'>
             <div className='container'>
-                <div className="card" style={{ alignItems: "center", padding: "2rem", minWidth: "40rem", lineHeight: "1.5rem" }}>
+                <div className="card" style={{ alignItems: "center", minWidth: "40rem", lineHeight: "1.5rem" }}>
                     <h2>Información sobre el cálculo de Huella</h2>
                     <p>
                         La huella de carbono es un indicador que mide la cantidad total

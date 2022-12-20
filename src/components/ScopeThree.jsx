@@ -7,7 +7,7 @@ const ScopeThree = ({ scopeState, setScopeState }) => {
         <div className="card" style={{ minWidth: "72rem" }}>
             <div className="step-title">Alcance 3</div>
             <div className="cardContainer" style={{ display: "flex" }}>
-                <div className="cardLeft" style={{ flex: 2, lineHeight: "1.5rem", margin: "1rem 1.5rem 1rem 0" }}>
+                <div className="cardLeft" style={{ flex: 2, lineHeight: "1.5rem" }}>
                     <b>Otras Emisiones indirectas de GEI</b>
                     <p>Emisiones que ocurren debido a las actividades de la organización, pero que se generan a partir de fuentes que no son de su propiedad ni control, por ejemplo, viajes aéreos.</p>
                     <p style={{ margin: 0, alignSelf: "start" }}>Incluye:</p>
@@ -24,7 +24,7 @@ const ScopeThree = ({ scopeState, setScopeState }) => {
                 <div className="cardCenter">
                     <div className="line" />
                 </div>
-                <div className="cardRight" style={{ flex: 3, margin: "1rem 0 1rem 0" }}>
+                <div className="cardRight" style={{ flex: 3 }}>
                     {scopeData.map((item) => (
                         item.id > 12 && item.id < 19 &&
                         <div className="inputsContainer" key={item.id}>
@@ -42,7 +42,7 @@ const ScopeThree = ({ scopeState, setScopeState }) => {
                 <div className="cardCenter">
                     <div className="line" />
                 </div>
-                <div className="cardRight" style={{ flex: 3, margin: "1rem 0 1rem 0" }}>
+                <div className="cardRight" style={{ flex: 3 }}>
                     {scopeData.map((item) => (
                         item.id > 18 &&
                         <div className="inputsContainer" key={item.id}>

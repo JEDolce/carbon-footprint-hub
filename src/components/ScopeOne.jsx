@@ -10,6 +10,7 @@ const ScopeOne = ({ scopeState, setScopeState }) => {
 
     // validation
     // https://bobbyhadz.com/blog/react-check-if-input-value-is-valid-number
+    // https://bobbyhadz.com/blog/react-only-number-input
 
     return (
         <div className="card">
@@ -28,34 +29,32 @@ const ScopeOne = ({ scopeState, setScopeState }) => {
                 <div className="cardCenter">
                     <div className="line" />
                 </div>
-                <div className="cardRight" style={{ flex: 3, margin: "1rem 0 1rem 1.5rem" }}>
+                <div className="cardRight" style={{ flex: 3 }}>
                     <h3>Combustibles</h3>
                     {scopeData.map((item) => (
                         item.id > 0 && item.id < 6 &&
-                        <>
-                            <div className="inputsContainer" key={item.id}>
-                                <label>{item.label}</label>
-                                <input
-                                    {...item}
-                                    type={item.type}
-                                    placeholder={item.placeholder}
-                                    value={scopeState[item.name]}
-                                    onChange={(e) => setScopeState({ ...scopeState, [e.target.name]: e.target.value })}
-                                // onBlur={handleFocus}
-                                // onFocus={() =>
-                                //     scopeData.name === "gas" && setFocus(true)
-                                // }
-                                // focus={focus.toString()}
-                                />
-                            </div>
+                        <div className="inputsContainer" key={item.id}>
+                            <label>{item.label}</label>
+                            <input
+                                {...item}
+                                type={item.type}
+                                placeholder={item.placeholder}
+                                value={scopeState[item.name]}
+                                onChange={(e) => setScopeState({ ...scopeState, [e.target.name]: e.target.value })}
+                            // onBlur={handleFocus}
+                            // onFocus={() =>
+                            //     scopeData.name === "gas" && setFocus(true)
+                            // }
+                            // focus={focus.toString()}
+                            />
                             {/* <span className='validate'>{focus ? "Debe contener un valor numérico" : " "}</span> */}
-                        </>
+                        </div>
                     ))}
                 </div>
                 <div className="cardCenter">
                     <div className="line" />
                 </div>
-                <div className="cardRight" style={{ flex: 3, margin: "1rem 0 1rem 1.5rem" }}>
+                <div className="cardRight" style={{ flex: 3 }}>
                     <h3>Refrigerantes</h3>
                     {scopeData.map((item) => (
                         item.id > 5 && item.id < 11 &&

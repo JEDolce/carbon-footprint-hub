@@ -13,56 +13,40 @@ export const Results = () => {
 
     // Estados con la data del usuario
     const states = [
-        newState.gas,
-        newState.gasoil,
-        newState.nafta,
-        newState.fueloil,
-        newState.lpg,
-        newState.r22,
-        newState.r134,
-        newState.r407c,
-        newState.r410a,
-        newState.r141b,
-        newState.electricidad,
-        newState.vapor,
-        newState.home,
-        newState.traslados,
-        newState.publico,
-        newState.cabotaje,
-        newState.internacional,
-        newState.alojamiento,
-        newState.terrestre,
-        newState.maritimo,
-        newState.agua,
-        newState.tratamiento,
-        newState.residuos,
+        newState.Gas,
+        newState.Gasoil,
+        newState.Nafta,
+        newState.Fueloil,
+        newState.Lpg,
+        newState.R22,
+        newState.R134,
+        newState.R407c,
+        newState.R410a,
+        newState.R141b,
+        newState.Electricidad,
+        newState.Vapor,
+        newState.Home,
+        newState.Traslados,
+        newState.Publico,
+        newState.Cabotaje,
+        newState.Internacional,
+        newState.Alojamiento,
+        newState.Terrestre,
+        newState.Maritimo,
+        newState.Agua,
+        newState.Tratamiento,
+        newState.Residuos,
     ];
 
-    // Resultados para cada gas (inicializar en [])
-    const results = {
-        gasResult: [],
-        gasoilResult: [],
-        naftaResult: [],
-        fueloilResult: [],
-        lpgResult: [],
-        r22Result: [],
-        r134Result: [],
-        r407cResult: [],
-        r410aResult: [],
-        r141bResult: [],
-        electricResult: [],
-        vaporResult: [],
-        homeResult: [],
-        trasladosResult: [],
-        publicoResult: [],
-        cabotajeResult: [],
-        interResult: [],
-        hotelResult: [],
-        terrestreResult: [],
-        maritimoResult: [],
-        aguaResult: [],
-        tratResult: [],
-        residuosResult: [],
+    // Inicializo results
+    // Primero creo la array con los resultados y despues lo transformo en objeto
+    const resultsArray = [];
+    const results = {};
+
+    scopeData.map(x => resultsArray.push((x.name).toString()));
+
+    for (let y = 0; y < resultsArray.length; y++) {
+        results[resultsArray[y]] = []
     };
 
     // Resultado total (inicializar en 0) e indice de iteracion
@@ -81,31 +65,11 @@ export const Results = () => {
     });
 
     // Transformo la array totals en un objeto
-    const totalsObj = {
-        "Gas": totals[0],
-        "Gasoil": totals[1],
-        "Nafta": totals[2],
-        "Fueloil": totals[3],
-        "Lpg": totals[4],
-        "R22": totals[5],
-        "R134": totals[6],
-        "R407c": totals[7],
-        "R410a": totals[8],
-        "R141b": totals[9],
-        "Electricidad": totals[10],
-        "Vapor": totals[11],
-        "Home Office": totals[12],
-        "Traslados": totals[13],
-        "Transp. Publico": totals[14],
-        "Cabotaje": totals[15],
-        "Vuelos Internac.": totals[16],
-        "Hotel": totals[17],
-        "F. Terrestre": totals[18],
-        "F. Maritimo": totals[19],
-        "Agua": totals[20],
-        "Efluentes": totals[21],
-        "Residuos": totals[22],
-    }
+    const totalsObj = {};
+
+    for (let z = 0; z < resultsArray.length; z++) {
+        totalsObj[resultsArray[z]] = totals[z]
+    };
 
     // Calcular scopes por separado
     for (let i = 0; i < 10; i++) {
@@ -123,7 +87,6 @@ export const Results = () => {
     // Ordenar totals de mayor a menor
     // The sort() method casts elements to strings and compares the strings to determine the orders.
     // If compare(a,b) is less than zero, the sort() method sorts a to a lower index than b. In other words, a will come first.
-    // https://stackoverflow.com/questions/1069666/sorting-object-property-by-values
     const sortedTotals = [...totals]
     sortedTotals.sort((a, b) => {
         if (a > b) return -1;
@@ -131,6 +94,8 @@ export const Results = () => {
         return 0;
     });
 
+    // En este caso transformo el objeyo en array, hago un sort
+    // y luego transformo la array ordenada en un objeto nuevamente
     const sortedObj = Object.entries(totalsObj)
         .sort(([, a], [, b]) => b - a)
         .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
@@ -139,7 +104,7 @@ export const Results = () => {
     return (
         <div style={{ display: "flex" }}>
             <div className='left'>
-                <div className='resultContainer'>
+                <div className='resultLeftContainer'>
                     <div style={{ padding: "1rem 1rem 1rem 2rem" }}>
                         <h2>Resultados</h2>
                         <p>Su huella de carbono es de:</p>
@@ -187,7 +152,7 @@ export const Results = () => {
                                     <th>Emisiones N<span style={{ fontSize: "0.75rem" }}>2</span>O</th>
                                 </tr>
                                 {scopeData.map((a) =>
-                                    a.id < 8 &&
+                                    a.id < 10 &&
                                     <tr key={a.id}>
                                         <td style={{ textAlign: "left" }}>{a.label}</td>
                                         <td style={{ fontWeight: "bold" }}>{Object.values(totals)[a.id - 1]}</td>
