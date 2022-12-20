@@ -139,22 +139,6 @@ input {
     margin-bottom: 1rem;
 }
 
-.left {
-    height: 100vh;
-    /* height: 90vh; */
-    flex: 2;
-    position: relative;
-    background-color: #eeeeee;
-}
-
-.right {
-    height: 90vh;
-    flex: 7;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
 li {
     line-height: 1.5rem;
 }
@@ -173,6 +157,27 @@ li {
     flex-direction: column;
     padding-top: 7rem;
     font-size: 1.1rem;
+}
+
+.left {
+    height: 100vh;
+    /* height: 90vh; */
+    flex: 2;
+    position: relative;
+    background-color: #eeeeee;
+}
+
+.right {
+    height: 90vh;
+    flex: 7;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pieChart {
+    width: 400px;
+    height: 300px;
 }
 
 /* Buttons */
@@ -333,11 +338,6 @@ input:invalid[focus="true"] {
         font-size: 1rem;
     }
 
-    .copyright,
-    #date {
-        font-size: 0.6rem;
-    }
-
     table {
         width: 70%;
     }
@@ -347,4 +347,8 @@ input:invalid[focus="true"] {
         font-size: 14px;
     }
 
+    .copyright,
+    #date {
+        font-size: 0.6rem;
+    }
 }

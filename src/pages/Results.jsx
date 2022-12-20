@@ -102,12 +102,12 @@ export const Results = () => {
 
 
     return (
-        <div style={{ display: "flex" }}>
+        <div className='resultContainer' style={{ display: "flex" }}>
             <div className='left'>
                 <div className='resultLeftContainer'>
                     <div style={{ padding: "1rem 1rem 1rem 2rem" }}>
                         <h2>Resultados</h2>
-                        <p>Su huella de carbono es de:</p>
+                        <p>Su huella de carbono es:</p>
                         <h2 style={{ textAlign: "center", margin: "2rem" }}>
                             {Object.values(totals).reduce(
                                 (x, y) => { return Math.round((x + y) * 100) / 100 }, 0)

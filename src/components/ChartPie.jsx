@@ -11,9 +11,16 @@ export default function ChartPie({ scopes }) {
         { name: 'Alcance 3', value: scopes[2] },
     ];
 
+    var screenWidth = window.innerWidth;
+
     return (
         <div className='chart'>
-            <PieChart width={400} height={300} onMouseEnter={PureComponent.onPieEnter}>
+            <PieChart
+                className='pieChart'
+                width={screenWidth > 1400 ? 400 : 300}
+                height={screenWidth > 1400 ? 300 : 250}
+                onMouseEnter={PureComponent.onPieEnter}
+            >
                 <Pie
                     data={data}
                     cx="center"

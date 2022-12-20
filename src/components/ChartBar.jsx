@@ -46,12 +46,14 @@ export default function ChartBar({ sortedObj }) {
         },
     ];
 
+    var screenWidth = window.innerWidth;
+
     return (
         <ResponsiveContainer width="100%" height="100%" >
             <div className="chart">
                 <BarChart
-                    width={800}
-                    height={300}
+                    width={screenWidth > 1400 ? 800 : 600}
+                    height={screenWidth > 1400 ? 300 : 250}
                     data={data}
                     margin={{
                         top: 10,
