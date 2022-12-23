@@ -38,6 +38,11 @@ export const Results = () => {
         newState.Residuos,
     ];
 
+    // If there is Undefined, change it to 0
+    states.forEach((k, index) => {
+        states[index] = k === undefined ? 0 : k;
+    });
+
     // Inicializo results
     // Primero creo la array con los resultados y despues lo transformo en objeto
     const resultsArray = [];
