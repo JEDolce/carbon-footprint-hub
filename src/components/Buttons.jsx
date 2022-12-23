@@ -8,11 +8,11 @@ export default function Buttons({ props }) {
         <div className='button-area'>
             {
                 page > 0 &&
-                <button onClick={() => setPage(page - 1)}>Back</button>
+                <button onClick={() => setPage(page - 1)}>Atras</button>
             }
             {
                 page < compList.length - 1 &&
-                <button onClick={() => setPage(page + 1)}>Next</button>
+                <button onClick={() => setPage(page + 1)}>Siguiente</button>
             }
             {
                 page === compList.length - 1 &&

@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { scopeData } from '../data';
 
 const ScopeThree = ({ scopeState, setScopeState }) => {
+    const [focus, setFocus] = useState(false);
+
+    const handleFocus = () => {
+        setFocus(true)
+        console.log(focus);
+    };
+
+    const handleChange = (e) => {
+        setScopeState({ ...scopeState, [e.target.name]: e.target.value })
+    };
 
     return (
         <div className="card" style={{ minWidth: "72rem" }}>
@@ -31,11 +41,15 @@ const ScopeThree = ({ scopeState, setScopeState }) => {
                             <label>{item.label}</label>
                             <input
                                 {...item}
-                                type={item.type}
+                                type={"number"}
                                 placeholder={item.placeholder}
                                 value={scopeState[item.name]}
-                                onChange={(e) => setScopeState({ ...scopeState, [e.target.name]: e.target.value })}
+                                onChange={handleChange}
+                                pattern={[0 - 9]}
+                                onBlur={handleFocus}
+                                focus={focus.toString()}
                             />
+                            <span className='validate'>{focus ? "Debe contener un valor numérico!" : " "}</span>
                         </div>
                     ))}
                 </div>
@@ -49,11 +63,15 @@ const ScopeThree = ({ scopeState, setScopeState }) => {
                             <label>{item.label}</label>
                             <input
                                 {...item}
-                                type={item.type}
+                                type={"number"}
                                 placeholder={item.placeholder}
                                 value={scopeState[item.name]}
-                                onChange={(e) => setScopeState({ ...scopeState, [e.target.name]: e.target.value })}
+                                onChange={handleChange}
+                                pattern={[0 - 9]}
+                                onBlur={handleFocus}
+                                focus={focus.toString()}
                             />
+                            <span className='validate'>{focus ? "Debe contener un valor numérico!" : " "}</span>
                         </div>
                     ))}
                 </div>

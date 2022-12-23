@@ -60,6 +60,8 @@ img {
 }
 
 .card {
+    /* Puse relative solo por el mensaje de validación */
+    position: relative;
     min-width: 60rem;
     max-width: 500px;
     background-color: white;
@@ -263,12 +265,17 @@ tr:hover {
 /* Validation */
 .validate {
     color: red;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: bold;
     padding: 5px;
     display: none;
 }
 
 input:invalid~.validate {
+    /* Que se ubique en el margen inferior de card */
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
     display: block;
 }
 
@@ -350,5 +357,11 @@ input:invalid[focus="true"] {
     .copyright,
     #date {
         font-size: 0.6rem;
+    }
+
+    .validate {
+
+        font-size: 12px;
+
     }
 }
